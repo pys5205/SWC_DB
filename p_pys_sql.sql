@@ -1,22 +1,22 @@
---¼­¿ï½Ã 200¸¸¿ø ÀÌÇÏ È¸¿øÀÌ Á¤Ã¥¸í °Ë»ö½Ã °ü·Ã ÇıÅÃ, ½ÅÃ»¹æ¹ı, ½ÇÇà±â°£ Á¶È¸
---(¼Òµæ, ÇıÅÃ¸í, ÇıÅÃ³»¿ë,ÇıÅÃ±â°£, ½ÅÃ»¹æ¹ı) 
-select sal_grade ±Ş¿©µî±Ş, area_name Áö¿ª¸í, p.pol_name Á¤Ã¥¸í, b.ben_name ÇıÅÃ¸í
-        , ben_date ÇıÅÃ±â°£, ben_cont ÇıÅÃ³»¿ë
+--ì„œìš¸ì‹œ 200ë§Œì› ì´í•˜ íšŒì›ì´ ì •ì±…ëª… ê²€ìƒ‰ì‹œ ê´€ë ¨ í˜œíƒ, ì‹ ì²­ë°©ë²•, ì‹¤í–‰ê¸°ê°„ ì¡°íšŒ
+--(ì†Œë“, í˜œíƒëª…, í˜œíƒë‚´ìš©,í˜œíƒê¸°ê°„, ì‹ ì²­ë°©ë²•)  
+select sal_grade ê¸‰ì—¬ë“±ê¸‰, area_name ì§€ì—­ëª…, p.pol_name ì •ì±…ëª…, b.ben_name í˜œíƒëª…
+        , ben_date í˜œíƒê¸°ê°„, ben_cont í˜œíƒë‚´ìš©
 from sal s, area a, class c, pol p, pol_ben pb, benefit b
 where hisal<=200 and
     s.sal_num = c.sal_num and
     a.area_num = c.area_num and
-    area_name = '¼­¿ïÆ¯º°½Ã' and
+    area_name = 'ì„œìš¸íŠ¹ë³„ì‹œ' and
     c.pol_num = p.pol_num and
     p.pol_num = pb.pol_num and
     pb.ben_num = b.ben_num;
 
---40´ëÀÌ»ó ±Ù·ÎÀÚ°¡ ½ÅÃ»ÇÏ°í ½ÍÀº Á¤Ã¥ ½ÅÃ»¹æ¹ı È®ÀÎ °¡´É(Á¤Ã¥¸í, ½ÅÃ»³¯Â¥, ½ÅÃ»¼ö´Ü)
-select j.job_name Á÷¾÷ÀÌ¸§, p.pol_name Á¤Ã¥¸í, p.pol_gigan Á¤Ã¥±â°£, pol_way ½ÅÃ»¹æ¹ı
+--40ëŒ€ì´ìƒ ê·¼ë¡œìê°€ ì‹ ì²­í•˜ê³  ì‹¶ì€ ì •ì±… ì‹ ì²­ë°©ë²• í™•ì¸ ê°€ëŠ¥(ì •ì±…ëª…, ì‹ ì²­ë‚ ì§œ, ì‹ ì²­ìˆ˜ë‹¨)
+select j.job_name ì§ì—…ì´ë¦„, p.pol_name ì •ì±…ëª…, p.pol_gigan ì •ì±…ê¸°ê°„, pol_way ì‹ ì²­ë°©ë²•
 from age a, job j, class c, pol p
 where loage >=40 and
     a.age_num = c.age_num and
-    job_name = '±Ù·ÎÀÚ' and
+    job_name = 'ê·¼ë¡œì' and
     j.job_num = c.job_num and
     c.pol_num = p.pol_num;
 
@@ -24,10 +24,10 @@ where loage >=40 and
 
 
 
---¾Æµ¿ÀÌ ¹ŞÀ» ¼ö ÀÖ´Â Á¤Ã¥ ¹× ÇıÅÃ Á¾·ù Á¶È¸ °¡´É(³ªÀÌµî±Ş¸í, Á¤Ã¥¸í, ÇıÅÃ¸í,ÇıÅÃ³»¿ë)  
-select a.age_grade ³ªÀÌµî±Ş,p.pol_name Á¤Ã¥¸í, ben_name ÇıÅÃ¸í, ben_cont ÇıÅÃ³»¿ë
+--ì•„ë™ì´ ë°›ì„ ìˆ˜ ìˆëŠ” ì •ì±… ë° í˜œíƒ ì¢…ë¥˜ ì¡°íšŒ ê°€ëŠ¥(ë‚˜ì´ë“±ê¸‰ëª…, ì •ì±…ëª…, í˜œíƒëª…,í˜œíƒë‚´ìš©)  
+select a.age_grade ë‚˜ì´ë“±ê¸‰,p.pol_name ì •ì±…ëª…, ben_name í˜œíƒëª…, ben_cont í˜œíƒë‚´ìš©
 from pol p, age a,class c, pol_ben pb, benefit b
-where a.age_grade='¾Æµ¿' and 
+where a.age_grade='ì•„ë™' and 
     a.age_num = c.age_num and
     c.pol_num = p.pol_num and
     p.pol_num = pb.pol_num and
